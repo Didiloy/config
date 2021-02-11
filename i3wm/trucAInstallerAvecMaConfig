@@ -1,0 +1,13 @@
+installer kitty le terminal emulator
+installer rofi le launcher d'application et son theme onedark
+installer redshift pour la couleur de nuit
+====================================================================
+#j'ajoute un raccourci pour lancer redshift (nightmode)
+#47.21 -1.55
+bindym $mod+n exec redshift -O 3500K
+#Et un raccourci pour le désactiver
+bindsym $mod+Shift+n exec redshift -l 47.21:-1.55 -o 6500K -P
+====================================================================
+installer polybar pour la barre
+installer i3-radius pour les rounded corner en clonant https://github.com/terroo/i3-radius
+installer compton pour activer la transparence des fenetres
