@@ -1,0 +1,46 @@
+general {
+  colors = true
+  interval = 5
+  color_good = "#80a0f0"
+  color_bad = "#ff00ff"
+  color_degraded = "#ffaa00"
+}
+
+order += "volume master"
+order += "disk /home"
+order += "wireless _first_"
+order += "battery all"
+order += "memory"
+order += "tztime local"
+
+volume master {
+  format = "♪: %volume"
+  format_muted = "♪: muted (%volume)"
+  device = "default"
+  mixer = "Master"
+  mixer_idx = 0
+}
+
+wireless _first_ {
+  format_up = "W: (%essid) %ip"
+  format_down = "W: down"
+}
+
+battery all {
+  format = "%status %percentage %remaining"
+}
+
+tztime local {
+  format = "%d-%m-%Y %H:%M:%S %a"
+}
+
+
+disk "/home" {
+  format = "%avail"
+}
+
+memory {
+        format = "%used"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
+}
