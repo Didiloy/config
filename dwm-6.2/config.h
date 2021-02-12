@@ -75,7 +75,9 @@ static const char *termcmd[]  = {"kitty", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-    { MODKEY,			            XK_d,	   spawn,          SHCMD("rofi -show drun -theme onedark") },
+	{ MODKEY,	                XK_n,	   spawn,          SHCMD("redshift -O 3000K") },
+        { MODKEY|ShiftMask,	        XK_n,	   spawn,          SHCMD("redshift -l 47.21:-1.55 -o 6500K -P") },
+	{ MODKEY,	                XK_d,	   spawn,          SHCMD("rofi -show drun -theme onedark") },
 	// { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                      XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
