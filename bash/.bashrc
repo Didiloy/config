@@ -151,6 +151,6 @@ if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
 fi
 
 #Afficher neofetch au lancement
-#neofetch
+neofetch
 #afficher figlet
-figlet -c Didiloy
+#figlet -c Didiloy
