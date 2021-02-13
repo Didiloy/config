@@ -28,7 +28,7 @@ static const char col_gray3[]       = "#bbbbbb";
 //current tag and and current window font color
 static const char col_gray4[]       = "#eeeeee";
 //top bar seconde color and active window border color
-static const char col_cyan[]        = "#d41e11";
+static const char col_cyan[]        = "#684cdf";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
