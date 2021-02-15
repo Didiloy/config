@@ -1,4 +1,5 @@
 alias icat='kitty +kitten icat'
+alias ls='exa -la' 
 alias lal='ls -al'
 alias ll='ls -l'
 alias la='ls -A'
