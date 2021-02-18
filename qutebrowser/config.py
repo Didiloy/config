@@ -11,3 +11,4 @@ c.url.start_pages = 'file:///home/dylan//.config/qutebrowser/pageAcceuil.html'
 
 config.bind('X', 'hint links spawn --detach mpv {hint-url}')
 
+config.bind('gl', 'open google.com')
