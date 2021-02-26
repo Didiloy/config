@@ -9,8 +9,8 @@ static const char normfgcolor[]     = "#ff6b6b";
 static const char selbordercolor[]  = "#ababab";
 static const char selbgcolor[]      = "#292929";
 static const char selfgcolor[]      = "#ff6b6b";
-static const unsigned int borderpx  = 5;        /* border pixel of windows */
-static const unsigned int gappx     = 13;        /* gaps size between windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int gappx     = 8;        /* gaps size between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -34,22 +34,30 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 //font color
 static const char col_gray3[]       = "#bbbbbb";
+
 //current tag and and current window font color
 static const char col_gray4[]       = "#eeeeee";
+
 //top bar seconde color and active window border color
-static const char col_red[]       = "#b93b60";	
+
+static const char col_left[]       = "#2e3440";	
 //J'ajoute une couleur pour le coté gauche de la bar
-static const char col_green[]       = "#3bb994";
+
+static const char col_right[]       ="#3b4252";
+// "#3bb994";"#F17F42";
 //J'ajoute une couleur pour le coté droit de la bar
-static const char col_cyan[]        = "#684cdf";
+
+static const char col_middle[]        = "#434c5e";
+//#684cdf
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
-	[SchemeStatus]  = { col_gray1, col_green,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
-	[SchemeTagsSel]  = { col_gray4, col_red,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
-    [SchemeTagsNorm]  = { col_gray3, col_red,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
-    [SchemeInfoSel]  = { col_gray4, col_cyan,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
+	[SchemeSel]  = { col_gray4, col_middle,  col_middle  },
+	[SchemeStatus]  = { col_gray4, col_right,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
+	[SchemeTagsSel]  = { col_gray4, col_left,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
+    [SchemeTagsNorm]  = { col_gray3, col_left,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
+    [SchemeInfoSel]  = { col_gray4, col_middle,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
     [SchemeInfoNorm]  = { col_gray3, col_gray1,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
 };
 
@@ -91,7 +99,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_middle, "-sf", col_gray4, NULL };
 // static const char *termcmd[]  = { "st", NULL };
 static const char *termcmd[]  = {"kitty", "-e", "fish", NULL};
 
