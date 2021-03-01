@@ -53,7 +53,7 @@ static const char col_middle[]        = "#434c5e";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_middle,  col_middle  },
+	[SchemeSel]  = { col_gray4, col_middle, "#fa8caa"  }, //Couleur de la bordure des fenetre
 	[SchemeStatus]  = { col_gray4, col_right,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
 	[SchemeTagsSel]  = { col_gray4, col_left,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
     [SchemeTagsNorm]  = { col_gray3, col_left,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
