@@ -3,12 +3,12 @@
 #include <X11/XF86keysym.h>
 /* appearance */
 static const char font[]            = "-*-*-medium-*-*-*-10-*-*-*-*-*-*-*";
-static const char normbordercolor[] = "#ababab";
-static const char normbgcolor[]     = "#292929";
-static const char normfgcolor[]     = "#ff6b6b";
-static const char selbordercolor[]  = "#ababab";
-static const char selbgcolor[]      = "#292929";
-static const char selfgcolor[]      = "#ff6b6b";
+// static const char normbordercolor[] = "#ababab";
+// static const char normbgcolor[]     = "#292929";
+// static const char normfgcolor[]     = "#ff6b6b";
+// static const char selbordercolor[]  = "#ababab";
+// static const char selbgcolor[]      = "#292929";
+// static const char selfgcolor[]      = "#ff6b6b";
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int gappx     = 8;        /* gaps size between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -39,7 +39,6 @@ static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 
 //top bar seconde color and active window border color
-
 static const char col_left[]       = "#2e3440";	
 //J'ajoute une couleur pour le coté gauche de la bar
 
@@ -81,10 +80,10 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
+	{ "[]=",      tile },    /* tile normal. Master a gauche et slave a droite*/
 	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
-	{ "TTT",      bstack },
+	{ "[M]",      monocle }, /*toute les fenetre les une sur les autres (plein écran)*/
+	{ "TTT",      bstack }, /* Tile vertical. Master en haut et slave en bas*/
 	{ "===",      bstackhoriz },
 };
 
@@ -142,8 +141,11 @@ static Key keys[] = {
 	{ MODKEY,                       XK_m,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_semicolon, focusmon,       {.i = +1 } },
 	// { MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_m,  tagmon,         {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_m,         tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_semicolon, tagmon,         {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_h,       setgaps,        {.i = -5 } },
+	{ MODKEY|ShiftMask,             XK_l,       setgaps,        {.i = +5 } },
+	{ MODKEY|ShiftMask,             XK_j,       setgaps,        {.i = 0  } },
 	TAGKEYS(                        0x26,                      0)
 	TAGKEYS(                        0xe9,                      1)
 	TAGKEYS(                        0x22,                      2)
