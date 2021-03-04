@@ -118,6 +118,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,	            XK_o,	   spawn,          SHCMD("shutdown -h now") },
 	// { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                      XK_Return, spawn,           {.v = termcmd } },         
+    { MODKEY|ShiftMask,	            XK_u,	   spawn,          SHCMD("qutebrowser") },
     { MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
