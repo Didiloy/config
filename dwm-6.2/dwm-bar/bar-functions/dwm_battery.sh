@@ -13,6 +13,8 @@ dwm_battery () {
     # if [ "$IDENTIFIER" = "unicode" ]; then
         if [ "$STATUS" = "Charging" ]; then
             printf "  %s%% %s" "$CHARGE" "$STATUS"
+        elif [ "$STATUS" = "Full" ]; then
+            printf "   %s%% %s" "$CHARGE" "$STATUS"
         else
             # printf "🔋 %s%% %s" "$CHARGE" "$STATUS"
             printf " %s%% %s" "$CHARGE" "$STATUS"
