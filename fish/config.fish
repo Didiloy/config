@@ -20,6 +20,7 @@ alias env_eco='cd /home/dylan/Téléchargements/travail/iut/env_eco'
 alias env_cfjs='cd /home/dylan/Téléchargements/travail/iut/env_cfjs'
 alias base_donnee='cd /home/dylan/Téléchargements/travail/iut/base_donnee'
 alias gpi='cd /home/dylan/Téléchargements/travail/iut/gpi'
+alias prog_bd='cd /home/dylan/Téléchargements/travail/iut/prog_bd'
 alias rznger='ranger'
 alias rangzr='ranger'
 alias rzngzr='ranger'
@@ -31,4 +32,4 @@ alias mv='mv -i'
 alias ..='cd ..'
 alias cdT='cd /home/dylan/Téléchargements'
 
-
+/opt/shell-color-scripts/colorscript.sh -r
