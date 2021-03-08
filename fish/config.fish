@@ -30,6 +30,6 @@ alias range='ranger'
 alias rr='ranger'
 alias mv='mv -i'
 alias ..='cd ..'
-alias cdT='cd /home/dylan/Téléchargements'
+alias cdt='cd /home/dylan/Téléchargements'
 
 /opt/shell-color-scripts/colorscript.sh -r
