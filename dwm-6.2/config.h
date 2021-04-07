@@ -25,8 +25,10 @@ static const char dmenufont[]       = "monospace:size=10";
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
-static const char *brightness_up[]  =   { "cwm-brightness", "up", NULL };
-static const char *brightness_down[]  = { "cwm-brightness", "down", NULL };
+// static const char *brightness_up[]  =   { "cwm-brightness", "up", NULL };
+static const char *brightness_up[]  =   { "brightnessctl", "--min-val=2", "-q", "set", "3%-", NULL };
+// static const char *brightness_down[]  = { "cwm-brightness", "down", NULL };
+static const char *brightness_down[]  =   { "brightnessctl", "-q", "set", "3%+", NULL };
 //================================================
 //background color
 static const char col_gray1[]       = "#222222";
@@ -111,12 +113,18 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
     { 0,                            XF86XK_MonBrightnessUp,   spawn, SHCMD("brightnessctl --min-val=2 set 3%+")},
     { 0,                            XF86XK_MonBrightnessDown, spawn, SHCMD("brightnessctl --min-val=2 set 3%-")},
+    // { MODKEY,                       XK_a,      spawn,         SHCMD("brightnessctl --min-val=2 set 3%-")},
+    // { MODKEY,                       XK_z,      spawn,         SHCMD("brightnessctl --min-val=2 set 3%+")},
+    // { MODKEY,                       XK_z,      spawn,         {.v = brightness_down   } },
+    // { MODKEY,                       XK_a,      spawn,         {.v = brightness_up   } },
     { MODKEY,			            XK_n,	   spawn,          SHCMD("redshift -O 3000K") },
     { MODKEY|ShiftMask,	            XK_n,	   spawn,          SHCMD("redshift -l 47.21:-1.55 -o 6500K -P") },
-    { MODKEY,			            XK_d,	   spawn,          SHCMD("rofi -show drun -theme onedark") },
+    // { MODKEY,			            XK_d,	   spawn,          SHCMD("rofi -show drun -theme onedark") },
+    // { MODKEY,			            XK_d,	   spawn,          SHCMD("dmenu_run") },
+	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_c,      spawn,          SHCMD("bash $HOME/.config/dmenu/dmconfig")},
     { MODKEY|ShiftMask,	            XK_p,	   spawn,          SHCMD("reboot") },
     { MODKEY|ShiftMask,	            XK_o,	   spawn,          SHCMD("shutdown -h now") },
-	// { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                      XK_Return, spawn,           {.v = termcmd } },         
     { MODKEY|ShiftMask,	            XK_u,	   spawn,          SHCMD("qutebrowser") },
     { MODKEY,                       XK_b,      togglebar,      {0} },
