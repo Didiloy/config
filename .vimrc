@@ -17,6 +17,7 @@ set nowrap
 set scrolloff=8
 set laststatus=2
 set noshowmode
+set mouse=a
 "laststatus et noshowmode c'est pour avoir la barre de statut du plug
 "lightline.vim
 
