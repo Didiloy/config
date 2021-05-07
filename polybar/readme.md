@@ -1,5 +1,8 @@
 ## Config polybar
 ___
+## Screen polybar
+![Polybar](./screenPolybar.png)
+
 ## paquets à installer pour le bon fonctionnement
 #### Polices d'écritures
 - Hack Nerd font
