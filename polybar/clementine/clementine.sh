@@ -23,6 +23,6 @@ if [[ $LAUNCHED != "" ]]; then
 	OUTPUT="$OUTPUT   $PREVIOUS  $PLAY_PAUSE  $NEXT"
 #fi
 else
-	OUTPUT="%{A1:clementine & sleep 3s && clementine -p:}♫%{A}"	
+	OUTPUT="%{A1:clementine & sleep 3s && clementine -p:}%{A}"	
 fi
 echo "$OUTPUT"
