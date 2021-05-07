@@ -1,0 +1,435 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+background = #11121D
+foreground = #281d4a
+green =  #254c25
+light-gray = #565c64
+roseBackground = #97799d
+bleuForeground = #537acc
+bleu = #8198e4
+saumon = #c2a690
+marron = #553d58
+violet = #514378
+bleuClair = #1b5085
+noir = #1b0f15
+blanc = #eddee9
+jaune = #e4cd81
+
+[bar/example]
+monitor = eDP-1-1
+width = 100%
+height = 20
+padding-left = 1
+padding-right = 1
+radius = 6.0
+fixed-center = false
+
+background = ${colors.roseBackground}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #241b2a
+
+border-size = 3
+border-color = #0000000
+
+wm-restack = bspwm
+
+;Ce qu'il faut changer pour round-left et round-right
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = Hack Nerd Font:style=Bold:pixelsize=10;3
+font-1 = JetBrainsMono Nerd Font:size=15;5
+font-2 = Material Design Icons:style=Bold:size=10;3
+font-3 = unifont:fontformat=truetype:size=13:antialias=true;
+font-4 = fixed:pixelsize=10;1
+
+modules-left =  bspwm 
+modules-center = spotify mpd clementine
+modules-right = mem cpu weather pulseaudio luminosite wlan battery  time 
+;modules-right = mem cpu weather pulseaudio luminosite wlan battery  round-left time round-right 
+
+tray-position = right
+tray-padding = 2
+;tray-background = #0063ff
+
+
+;override-redirect = true
+
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[bar/hdmi]
+monitor = HDMI-1-1
+width = 100%
+height = 20
+padding-left = 1
+padding-right = 1
+radius = 6.0
+fixed-center = false
+
+;background = ${colors.background}
+;background = #4f68cc
+background = ${colors.roseBackground}
+foreground = ${colors.foreground}
+
+line-size = 3
+;line-color = #fff
+line-color = #241b2a
+
+border-size = 3
+border-color = #0000000
+
+wm-restack = bspwm
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = Hack Nerd Font:style=Bold:pixelsize=10;3
+font-1 = JetBrainsMono Nerd Font:size=15;5
+font-2 = Material Design Icons:style=Bold:size=10;3
+font-3 = unifont:fontformat=truetype:size=13:antialias=true;
+font-4 = fixed:pixelsize=10;1
+
+modules-left =  bspwm 
+modules-center = spotify mpd clementine
+modules-right = mem cpu weather pulseaudio luminosite wlan battery  time 
+
+tray-position = right
+tray-padding = 2
+;tray-background = #0063ff
+
+
+;override-redirect = true
+
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/round-left]
+type = custom/text
+content = %{T3}%{T-}
+content-foreground = ${colors.bleu}
+
+[module/round-right]
+type = custom/text
+content = %{T3}%{T-}
+content-foreground = ${colors.bleu}
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-underline = ${colors.secondary}
+
+label-layout = %layout%
+label-layout-underline = ${colors.secondary}
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = true
+inline-mode = true
+enable-click = true
+enable-scroll = true
+reverse-scroll = false
+format = <label-state>
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 0;
+
+label-separator = ""
+label-separator-background = ${colors.cyan}
+
+;;;;;;;;;;;;label focused;;;;;;;;
+label-focused = %icon% %name%
+label-focused-foreground = ${color.foreground}
+label-focused-padding = 1
+label-focused-background = ${colors.bleu}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;label occupe;;;;;;;;;;
+label-occupied = %icon% %name%
+label-occupied-foreground = ${colors.light-gray}
+label-occupied-background = ${colors.roseBackground}
+label-occupied-padding = 1
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;label empty;;;;;;;;;;;;;;
+label-empty = ""
+label-empty-foreground =   ${colors.foreground}
+label-empty-padding = 1
+label-empty-background = ${color.roseBackground} 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+label-urgent = %icon% %name%
+label-urgent-foreground = ${colors.cyan}
+label-urgent-background = ${colors.content-background}
+label-urgent-padding = 1
+
+
+[module/mpd]
+type = internal/mpd
+format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+
+label-song-maxlen = 25
+label-song-ellipsis = true
+
+
+[module/cpu]
+type = internal/cpu
+interval = 2.5
+format = <label>
+format-prefix = " "
+label = "%percentage:02%%"
+label-foreground = ${colors.saumon}
+format-prefix-foreground = ${colors.saumon}
+format-padding = 0
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+label = %percentage_used%%
+
+[module/mem]
+type = custom/script
+exec = printf "%.1f\n" $(echo $(free -m | sed -n 's/^Mem:\s\+[0-9]\+\s\+\([0-9]\+\)\s.\+/\1/p')/1024 | bc -l)
+format = <label>
+format-prefix = " "
+label = "%output%GB"
+label-foreground = ${colors.marron}
+format-prefix-foreground = ${colors.marron}
+format-padding = 1
+
+[module/wlan]
+type = internal/network
+interface = wlo1
+interval = 10.0
+format-connected = <label-connected>
+label-connected = "直"
+label-connected-foreground = ${colors.blanc}
+format-padding = 1
+
+[module/eth]
+type = internal/network
+interface = eno1
+interval = 3.0
+
+format-connected-underline = #55aa55
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = 
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #0a6cf5
+
+label = %date% %time%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <ramp-volume> <label-volume>
+format-muted = <label-muted>
+label-volume = %percentage%%
+label-muted = " "
+label-volume-foreground = ${colors.violet}
+format-muted-foreground = ${colors.violet}
+format-muted-padding = 1
+format-muted-background = ${colors.roseBackground}
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-foreground = ${colors.violet}
+ramp-headphones-0 = 
+ramp-headphones-foreground = ${colors.violet}
+format-padding = 1
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 98
+;;;;;;;;;;;;;;;;charging;;;;;;;;;;;;;;;
+format-charging = <ramp-capacity> <label-charging>
+label-charging = %percentage:2%%
+format-charging-padding = 1
+format-charging-foreground = ${colors.bleuClair}
+label-charging-foreground = ${colors.bleuClair}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;discharging;;;;;;;;;;;;;;;
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%%
+format-discharging-foreground = ${colors.bleuClair}
+label-discharging-foreground = ${colors.bleuClair}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;full;;;;;;;;;;;;;;;
+format-full-prefix = "  "
+format-full-prefix-foreground = ${colors.bleuClair}
+format-full-foreground = ${colors.bleuClair}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+format-foreground = ${colors.bleuClair}
+format-background = ${colors.bleuClair}
+ramp-capacity-foreground =  ${colors.bleuClair}
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "
+animation-charging-0 = " "
+animation-charging-1 = " "
+animation-charging-2 = " "
+animation-charging-3 = " "
+animation-charging-4 = " "
+animation-charging-foreground = ${colors.bleuClair}
+animation-charging-framerate = 910
+format-discharging-padding = 1
+
+[module/time]
+type = internal/date
+interval = 60
+format = <label>
+format-foreground = ${color.foreground}
+format-background = ${colors.bleu}
+date = %{F#281d4a} %H:%M%{F-}
+time-alt = %{F#281d4a} %d/%m/%y%{F-}
+label = %date%%time%
+format-padding = 1
+;label-right= %{T3}%{T-}
+;label-right-foreground = ${colors.bleu}
+;format-margin = 0
+;content = %{T3}%{T-}
+
+[module/temperature]
+type = internal/temperature
+ramp-0 = "󰜗"
+thermal-zone = 0
+warn-temperature = 70
+format = <ramp><label>
+format-warn = <ramp><label-warn>
+label = %temperature-c%
+label-warn = %temperature-c%
+ramp-foreground = ${colors.cyan}
+format-padding = 1
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = python $HOME/.config/polybar/polybar-spotify/spotify_status.py -f '{play_pause} - {song} - {album} - {artist}'
+;format-underline = #1db954
+
+[module/clementine]
+type = custom/script
+exec = ~/.config/polybar/clementine/clementine.sh
+label = %output%
+format = <label>
+interval = 1
+
+[module/weather]
+type = custom/script
+exec = forecast.sh/forecast.sh -l Frankrike/Pays_de_la_Loire/Loire-Atlantique | grep "Outlook" | sed 's/Outlook://'
+label-foreground = ${colors.green}
+format-prefix = " "
+format-prefix-foreground = ${colors.green}
+interval = 3600
+
+[module/luminosite]
+type = custom/script
+exec = $HOME/.config/polybar/luminosite/luminosite.sh
+label-foreground = ${colors.jaune}
+format-prefix = " "
+format-prefix-foreground = ${colors.jaune}
+interval = 1
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
