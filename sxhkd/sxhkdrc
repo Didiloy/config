@@ -163,3 +163,10 @@ alt + {_, shift +}b
 #Spawn qutebrowser
 super + shift + u
     qutebrowser &
+
+#Spawn et kill eww
+super + a
+    eww open-many profile date system player player_control quit_main
+
+super + shift + a
+    eww close-all
