@@ -64,7 +64,7 @@ font-3 = unifont:fontformat=truetype:size=13:antialias=true;
 font-4 = fixed:pixelsize=10;1
 
 modules-left =  circleStartBleu bspwm circleEndBleu
-modules-center = xwindow spotify clementine
+modules-center = xwindow separator spotify clementine
 modules-right = weather separator circleStart mem  cpu circleEnd separator  circleStart pulseaudio luminosite wlan circleEnd separator circleStart battery circleEnd separator circleStartBleu time circleEndBleu 
 
 tray-position = right
@@ -114,7 +114,7 @@ font-3 = unifont:fontformat=truetype:size=13:antialias=true;
 font-4 = fixed:pixelsize=10;1
 
 modules-left =  circleStartBleu bspwm circleEndBleu
-modules-center = xwindow spotify clementine
+modules-center = xwindow separator spotify clementine
 modules-right = weather separator circleStart mem  cpu circleEnd separator  circleStart pulseaudio luminosite wlan circleEnd separator circleStart battery circleEnd separator circleStartBleu time circleEndBleu 
 
 tray-position = right
