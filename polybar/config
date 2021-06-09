@@ -49,7 +49,7 @@ line-size = 3
 line-color = #241b2a
 
 border-size = 3
-border-color = #0000000
+;border-color = #000000
 
 wm-restack = bspwm
 
@@ -64,7 +64,7 @@ font-3 = unifont:fontformat=truetype:size=13:antialias=true;
 font-4 = fixed:pixelsize=10;1
 
 modules-left =  circleStartBleu bspwm circleEndBleu
-modules-center = spotify clementine
+modules-center = xwindow spotify clementine
 modules-right = weather separator circleStart mem  cpu circleEnd separator  circleStart pulseaudio luminosite wlan circleEnd separator circleStart battery circleEnd separator circleStartBleu time circleEndBleu 
 
 tray-position = right
@@ -91,8 +91,6 @@ padding-right = 1
 radius = 6.0
 fixed-center = false
 
-;background = ${colors.background}
-;background = #4f68cc
 background = ${colors.roseBackground}
 foreground = ${colors.foreground}
 
@@ -101,7 +99,7 @@ line-size = 3
 line-color = #241b2a
 
 border-size = 3
-border-color = #0000000
+;border-color = #000000
 
 wm-restack = bspwm
 
@@ -116,7 +114,7 @@ font-3 = unifont:fontformat=truetype:size=13:antialias=true;
 font-4 = fixed:pixelsize=10;1
 
 modules-left =  circleStartBleu bspwm circleEndBleu
-modules-center = spotify clementine
+modules-center = xwindow spotify clementine
 modules-right = weather separator circleStart mem  cpu circleEnd separator  circleStart pulseaudio luminosite wlan circleEnd separator circleStart battery circleEnd separator circleStartBleu time circleEndBleu 
 
 tray-position = right
@@ -136,7 +134,7 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title:0:20:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -185,11 +183,11 @@ ws-icon-8 = 9;
 ws-icon-9 = 0;
 
 label-separator = ""
-label-separator-background = ${colors.cyan}
+label-separator-background = ${colors.bleu}
 
 ;;;;;;;;;;;;label focused;;;;;;;;
 label-focused = %icon% %name%
-label-focused-foreground = ${color.foreground}
+label-focused-foreground = ${colors.foreground}
 label-focused-padding = 1
 label-focused-background = ${colors.bleu}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -205,26 +203,12 @@ label-occupied-padding = 1
 label-empty = ""
 label-empty-foreground =   ${colors.foreground}
 label-empty-padding = 1
-label-empty-background = ${color.roseBackground} 
+label-empty-background = ${colors.roseBackground} 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 label-urgent = %icon% %name%
-label-urgent-foreground = ${colors.cyan}
-label-urgent-background = ${colors.content-background}
+label-urgent-foreground = ${colors.bleu}
+label-urgent-background = ${colors.saumon}
 label-urgent-padding = 1
-
-
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
 
 
 [module/cpu]
@@ -258,6 +242,7 @@ format-prefix-foreground = ${colors.marron}
 format-padding = 0
 label-background = ${colors.roseClair}
 format-prefix-background = ${colors.roseClair}
+interval = 2
 
 [module/wlan]
 type = internal/network
@@ -339,7 +324,8 @@ label-charging-background = ${colors.roseClair}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;discharging;;;;;;;;;;;;;;;
 format-discharging = <ramp-capacity> <label-discharging>
-label-discharging = %percentage%%
+format-discharging-padding = 0
+label-discharging = " %percentage%%"
 format-discharging-foreground = ${colors.bleuClair}
 format-discharging-background = ${colors.roseClair}
 label-discharging-foreground = ${colors.bleuClair}
@@ -367,22 +353,17 @@ animation-charging-3 = " "
 animation-charging-4 = " "
 animation-charging-foreground = ${colors.bleuClair}
 animation-charging-framerate = 910
-format-discharging-padding = 1
 
 [module/time]
 type = internal/date
 interval = 60
 format = <label>
-format-foreground = ${color.foreground}
+format-foreground = ${colors.foreground}
 format-background = ${colors.bleu}
 date = %{F#281d4a} %H:%M%{F-}
 time-alt = %{F#281d4a} %d/%m/%y%{F-}
 label = %date%%time%
 format-padding = 1
-;label-right= %{T3}%{T-}
-;label-right-foreground = ${colors.bleu}
-;format-margin = 0
-;content = %{T3}%{T-}
 
 [module/temperature]
 type = internal/temperature
@@ -402,7 +383,6 @@ interval = 1
 format-prefix = " "
 format = <label>
 exec = python $HOME/.config/polybar/polybar-spotify/spotify_status.py -f '{play_pause} - {song} - {album} - {artist}'
-;format-underline = #1db954
 
 [module/clementine]
 type = custom/script
@@ -427,7 +407,7 @@ label-background = ${colors.roseClair}
 format-prefix = "  "
 format-prefix-foreground = ${colors.jaune}
 format-prefix-background = ${colors.roseClair}
-interval = 0
+interval = 2
 
 [settings]
 screenchange-reload = true
