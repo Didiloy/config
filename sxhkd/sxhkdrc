@@ -170,3 +170,12 @@ super + a
 
 super + shift + a
     eww close-all
+super + shift + a
+    eww close-all
+
+#Clementine
+alt + {p, n}
+    {clementine -t,clementine -f}
+
+alt + shift + n
+    clementine -r
