@@ -170,8 +170,6 @@ super + a
 
 super + shift + a
     eww close-all
-super + shift + a
-    eww close-all
 
 #Clementine
 alt + {p, n}
