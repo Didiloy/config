@@ -1,0 +1,2 @@
+#! /bin/env bash
+okular $(find $HOME -type f -iname "*.pdf" | dmenu -i -l 10)
