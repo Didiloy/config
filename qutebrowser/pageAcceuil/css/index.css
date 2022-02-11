@@ -1,0 +1,34 @@
+.background-dark-blue {
+    background-color: #141636 !important;
+}
+
+.background-lighter-blue {
+    background-color: #191b3a !important;
+}
+
+.border-radius-15 {
+    border-radius: 15px;
+}
+
+.margin-20 {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.margin-icon-temp {
+    margin-top: 10px;
+}
+
+.margin-card-title {
+    margin-bottom: 40px;
+}
+
+.div-hover {}
+
+.div-hover:hover {
+    background-color: #2f314d !important;
+}
+
+.no-link-style {
+    text-decoration: none;
+}

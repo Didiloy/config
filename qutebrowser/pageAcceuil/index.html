@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+    <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page d'acceuil</title>
+</head>
+
+<body class="background-dark-blue" onload="initView()">
+
+    <!-- Section: Search -->
+    <section id="search" class="section section-search background-dark-blue white-text center">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h5>Search DuckDuckGo</h5>
+                    <div class="input-field">
+                        <input class="background-dark-blue white-text" placeholder="Search..." type="text" id="search-input">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section Time, date and weather -->
+    <section class="section background-dark-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col s1 m1"></div>
+                <div class="col s3 m3">
+                    <div class="card-panel background-lighter-blue center white-text border-radius-15 z-depth-3">
+                        <h4 id="hour-text"></h4>
+                        <p id="date-text"></p>
+                    </div>
+                </div>
+                <div class="col s4 m4">
+                </div>
+                <div class="col s3 m3">
+                    <div class="card-panel background-lighter-blue center white-text border-radius-15 z-depth-3">
+                        <div class="row">
+                            <div class="col s2 m2">
+                                <img class="margin-icon-temp" src="" id="icon-weather" alt="" height="60" width="60">
+                            </div>
+                            <div class="col s2 m2"></div>
+                            <div class="col s8 m8">
+                                <h4 id="temperature-text"></h4>
+                            </div>
+                        </div>
+                        <p id="weather-description-text"></p>
+                    </div>
+                </div>
+                <div class="col s1 m1"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- section favorites websites -->
+    <section class="section background-dark-blue">
+        <div class="row">
+            <div class="col s3">
+                <div class="margin-20 card-panel background-lighter-blue center white-text border-radius-15 z-depth-3">
+                    <h5 class="card-title margin-card-title">Réseaux sociaux</h5>
+                    <div class="background-lighter-blue">
+                        <div class="row">
+                            <div class="col s12 div-hover">
+                                <a href="https://www.reddit.com/" class=" background-lighter-blue white-text div-hover">Reddit</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 div-hover">
+                                <a href="https://discord.com/app" class=" background-lighter-blue white-text div-hover">Discord</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 div-hover">
+                                <a href="http://web.whatsapp.com/" class=" background-lighter-blue white-text div-hover">Whatsapp web</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 div-hover">
+                                <a href="http://mail.google.com/mail?hl=fr" class=" background-lighter-blue white-text div-hover">Gmail</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col s3">
+                <div class="margin-20 card-panel background-lighter-blue center white-text border-radius-15 z-depth-3">
+                    <h5 class="card-title margin-card-title">Utiles</h5>
+                    <div class="background-lighter-blue">
+                        <div class="row">
+                            <div class="col s12 div-hover">
+                                <a href="https://madoc.univ-nantes.fr/my/" class=" background-lighter-blue white-text div-hover">Madoc</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 div-hover">
+                                <a href="https://webmail-etu.univ-nantes.fr/src/login.php" class=" background-lighter-blue white-text div-hover">Webmail</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 div-hover">
+                                <a href="https://edt.univ-nantes.fr/iut_nantes/g3163.html" class=" background-lighter-blue white-text div-hover">Emploi du temps</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 div-hover">
+                                <a href="https://stackoverflow.com/" class=" background-lighter-blue white-text div-hover">Stackoverflow</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s3">
+                <div class="margin-20 card-panel background-lighter-blue center white-text border-radius-15 z-depth-3">
+                    <h5 class="card-title margin-card-title">Autres</h5>
+                    <div class="background-lighter-blue">
+                        <div class="row">
+                            <div class="col s12 div-hover">
+                                <a href="https://www.youtube.com/" class=" background-lighter-blue white-text div-hover">Youtube</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 div-hover">
+                                <a href="https://github.com/Didiloy" class=" background-lighter-blue white-text div-hover">Github</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 div-hover">
+                                <a href="https://www.bred.fr/" class=" background-lighter-blue white-text div-hover">Bred</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 div-hover">
+                                <a href="https://www.twitch.tv/" class=" background-lighter-blue white-text div-hover">Twitch</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s3">
+                <div class="margin-20 card background-lighter-blue center white-text border-radius-15 z-depth-3">
+                    <div class="card-image">
+                        <img src="" id="image_news">
+                        <span class="card-title" id="titre_news"></span>
+                    </div>
+                    <div class="card-content">
+                        <p id="detail_news"></p>
+                        <a href="" id="lien_news">lire la suite</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.js"></script>
+</body>
+
+</html>
