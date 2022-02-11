@@ -162,7 +162,7 @@ alt + {_, shift +}b
 
 #Spawn qutebrowser
 super + shift + u
-    qutebrowser &
+    brave-browser &
 
 #Spawn et kill eww
 super + a
