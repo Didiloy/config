@@ -32,3 +32,12 @@
 .no-link-style {
     text-decoration: none;
 }
+
+.titre_news {
+    text-shadow:
+       1px 0px 0px black,   /* Right shadow */
+       -1px 0px 0px black,  /* Left shadow */
+       0px 1px 0px black,   /* Bottom shadow */
+       0px -1px 0px black;  /* Top shadow */
+    color: white
+   }
