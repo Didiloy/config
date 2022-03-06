@@ -29,6 +29,11 @@ async function initView() {
                             document.location.href = `https://www.reddit.com/r/${query.slice(2)}`;
                         }
                         break;
+                    case "g":
+                        if (["'"].includes(query[1])) {
+                            document.location.href = `https://www.google.com/search?q=${query.slice(2)}`;
+                        }
+
 
                     default:
                         break;
@@ -108,7 +113,7 @@ async function getNews() {
             image_news.setAttribute('src', data.articles[0].media);
             image_news.setAttribute('width', 300);
             image_news.setAttribute('height', 200);
-            titre_news.innerHTML = data.articles[0].title;
+            titre_news.innerHTML = data.articles[0].title.length > 60 ? data.articles[0].title.slice(0, 60) + '...' : data.articles[0].title;
             detail_news.innerHTML = data.articles[0].excerpt;
             lien_news.setAttribute('href', data.articles[0].link);
         })
