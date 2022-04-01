@@ -45,7 +45,11 @@ async function initView() {
 
     getDate();
     await getWeather();
-    await getNews();
+    try {
+        await getNews();
+    } catch (error) {
+        console.log(error);
+    }
     setInterval(getDate, 60000); //chaque minutes
     setInterval(getWeather, 3600000); //chaque 1h
 }

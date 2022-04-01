@@ -8,7 +8,8 @@ super + Return
 
 # program launcher
 super + d
-	dmenu_run
+# 	dmenu_run
+  	rofi -no-lazy-grab -show drun -modi drun
 
 # make sxhkd reload its configuration files:
 super + alt + r
