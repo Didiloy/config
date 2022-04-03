@@ -1,45 +1,54 @@
 // needed to have the weather
 const keyWeather = "9ae317666b214f4db7f142935220502";
-const unsplashKey = "zYkwd7-nZyTOB4SXH9cuC6bSiEUneNL8yhLMPiDzGD8"
-const topics = ["music", "sport", "tech", "science", "gaming", "food", "entertainment", "world"];
+const unsplashKey = "zYkwd7-nZyTOB4SXH9cuC6bSiEUneNL8yhLMPiDzGD8";
 const UNSPLASH_BASE_URL = "https://api.unsplash.com/search/photos";
+const newsKey = "bad455a3e69d4b6180a4ad2a31a7406b";
 
 async function initView() {
     // set the listener on the search bar
     search_bar = document.querySelector("#search-input");
     search_bar.addEventListener("keydown", function(event) {
-        if (event.key === 'Enter') {
+        if (event.key === "Enter") {
             let query = search_bar.value;
             if (!["'", "/"].includes(query[1])) {
                 document.location.href = `https://duckduckgo.com/?q=${query}`;
                 search_bar.value = "";
-            } else { //handle quick search
+            } else {
+                //handle quick search
                 switch (query[0]) {
                     case "y":
                         if (["'"].includes(query[1])) {
-                            document.location.href = `https://www.youtube.com/results?search_query=${query.slice(2)}`;
+                            document.location.href = `https://www.youtube.com/results?search_query=${query.slice(
+                2
+              )}`;
                         } else if (["/"].includes(query[1])) {
-                            document.location.href = `https://www.youtube.com/playlist?list=${query.slice(2)}`;
+                            document.location.href = `https://www.youtube.com/playlist?list=${query.slice(
+                2
+              )}`;
                         }
                         break;
                     case "r":
                         if (["'"].includes(query[1])) {
-                            document.location.href = `https://www.reddit.com/search/?q=${query.slice(2)}`;
+                            document.location.href = `https://www.reddit.com/search/?q=${query.slice(
+                2
+              )}`;
                         } else if (["/"].includes(query[1])) {
-                            document.location.href = `https://www.reddit.com/r/${query.slice(2)}`;
+                            document.location.href = `https://www.reddit.com/r/${query.slice(
+                2
+              )}`;
                         }
                         break;
                     case "g":
                         if (["'"].includes(query[1])) {
-                            document.location.href = `https://www.google.com/search?q=${query.slice(2)}`;
+                            document.location.href = `https://www.google.com/search?q=${query.slice(
+                2
+              )}`;
                         }
-
 
                     default:
                         break;
                 }
             }
-
         }
     });
 
@@ -63,7 +72,7 @@ function getDate() {
     let cYear = currentDate.getFullYear();
     let formatedDate = "<b>" + cDay + "/" + cMonth + "/" + cYear + "</b>";
 
-    let date_text = document.querySelector('#date-text');
+    let date_text = document.querySelector("#date-text");
     date_text.innerHTML = formatedDate;
 
     let time = currentDate.getHours() + ":" + currentDate.getMinutes();
@@ -73,80 +82,81 @@ function getDate() {
 
 async function getWeather() {
     // get the DOM elements to display the weather
-    let temperature = document.querySelector('#temperature-text');
-    let description = document.querySelector('#weather-description-text');
-    let image_weather = document.querySelector('#icon-weather');
+    let temperature = document.querySelector("#temperature-text");
+    let description = document.querySelector("#weather-description-text");
+    let image_weather = document.querySelector("#icon-weather");
 
     //Get the weather
-    let linkWeather = (`http://api.weatherapi.com/v1/current.json?key=${keyWeather}&q=Nantes&aqi=no&lang=fr`);
+    let linkWeather = `http://api.weatherapi.com/v1/current.json?key=${keyWeather}&q=Nantes&aqi=no&lang=fr`;
     await fetch(linkWeather)
-        .then(response => {
+        .then((response) => {
             return response.json();
         })
-        .then(async data => {
+        .then(async(data) => {
             // console.log(data);
             temperature.innerHTML = data.current.temp_c + " °C";
             description.innerHTML = data.current.condition.text;
-            let link_icon = data.current.condition.icon
+            let link_icon = data.current.condition.icon;
             link_icon = "http:" + link_icon;
-            image_weather.setAttribute('src', link_icon);
+            image_weather.setAttribute("src", link_icon);
             await getWallpaper(data.current.condition.text);
         });
 }
 
 async function getNews() {
     //get the dom element to display the news
-    let image_news = document.querySelector('#image_news');
-    let titre_news = document.querySelector('#titre_news');
-    let detail_news = document.querySelector('#detail_news');
-    let lien_news = document.querySelector('#lien_news');
+    let image_news = document.querySelector("#image_news");
+    let titre_news = document.querySelector("#titre_news");
+    let detail_news = document.querySelector("#detail_news");
+    let lien_news = document.querySelector("#lien_news");
     //get the news
-    var topic = topics[Math.floor(Math.random() * topics.length)]; //get a random topic from the array
-    let linkNews = `https://api.newscatcherapi.com/v2/latest_headlines?countries=FR&page_size=1&when=1d&lang=fr&topic=${topic}`;
-    await fetch(linkNews, {
-            method: 'GET',
-            headers: {
-                'x-api-key': 'S1YG_0S5p46_ZMgXdcBrJ8kS0WTzYAkNb_LLxpuDkK8'
-            }
-        })
-        .then(response => {
+    let linkNews = `https://newsapi.org/v2/top-headlines?country=fr&apiKey=${newsKey}`;
+    await fetch(linkNews)
+        .then((response) => {
             return response.json();
         })
-        .then(data => {
-            // console.log(data);
-            image_news.setAttribute('src', data.articles[0].media);
-            image_news.setAttribute('width', 300);
-            image_news.setAttribute('height', 200);
-            titre_news.innerHTML = data.articles[0].title.length > 60 ? data.articles[0].title.slice(0, 60) + '...' : data.articles[0].title;
-            detail_news.innerHTML = data.articles[0].excerpt;
-            lien_news.setAttribute('href', data.articles[0].link);
-        })
-
+        .then((data) => {
+            console.log(data);
+            numberOfTheArticle = Math.floor(Math.random() * data.articles.length);
+            image_news.setAttribute(
+                "src",
+                data.articles[numberOfTheArticle].urlToImage
+            );
+            image_news.setAttribute("width", 300);
+            image_news.setAttribute("height", 200);
+            titre_news.innerHTML =
+                data.articles[numberOfTheArticle].title.length > 60 ?
+                data.articles[numberOfTheArticle].title.slice(0, 60) + "..." :
+                data.articles[numberOfTheArticle].title;
+            detail_news.innerHTML = data.articles[numberOfTheArticle].description;
+            lien_news.setAttribute("href", data.articles[numberOfTheArticle].url);
+        });
 }
 
 async function getWallpaper(keyword) {
-    let body = document.querySelector('.body');
-    if (keyword.toLowerCase() === 'clair') {
-        keyword = 'good weather';
-    } else if (keyword.toLowerCase() === 'ensoleillé') {
-        keyword = 'summer landscape';
-    } else if (keyword.toLowerCase() === 'couvert') {
-        keyword = 'cloudy weather';
+    let body = document.querySelector(".body");
+    if (keyword.toLowerCase() === "clair") {
+        keyword = "good weather";
+    } else if (keyword.toLowerCase() === "ensoleillé") {
+        keyword = "summer landscape";
+    } else if (keyword.toLowerCase() === "couvert") {
+        keyword = "cloudy weather";
     }
-    fetch(UNSPLASH_BASE_URL + `?client_id=${unsplashKey}&query=${keyword}&per_page=8&orientation=landscape`)
-        .then(async(response) => {
-            response.json().then((data) => {
-                // console.log(data.results);
-                let linkNumber = Math.floor(Math.random() * data.results.length);
-                try {
-                    let linkPicture = data.results[linkNumber].urls.regular;
-                    body.backgroundColor = 'none';
-                    body.style.backgroundImage = 'url(' + linkPicture + ')';
-                    body.style.backgroundSize = 'cover';
-                } catch (error) {
-                    console.log(error);
-                }
-
-            })
-        })
+    fetch(
+        UNSPLASH_BASE_URL +
+        `?client_id=${unsplashKey}&query=${keyword}&per_page=8&orientation=landscape`
+    ).then(async(response) => {
+        response.json().then((data) => {
+            // console.log(data.results);
+            let linkNumber = Math.floor(Math.random() * data.results.length);
+            try {
+                let linkPicture = data.results[linkNumber].urls.regular;
+                body.backgroundColor = "none";
+                body.style.backgroundImage = "url(" + linkPicture + ")";
+                body.style.backgroundSize = "cover";
+            } catch (error) {
+                console.log(error);
+            }
+        });
+    });
 }
