@@ -1,0 +1,753 @@
+Build started at 2022-07-01T19:07:00.417101
+Main binary: /usr/bin/python3
+Build Options: -Dbuildtype=release
+Python system: Linux
+The Meson build system
+Version: 0.53.2
+Source dir: /home/dylan/picom
+Build dir: /home/dylan/picom/build
+Build type: native build
+Project name: picom
+Project version: 9
+No CFLAGS in the environment, not changing global flags.
+No LDFLAGS in the environment, not changing global flags.
+No CPPFLAGS in the environment, not changing global flags.
+Sanity testing C compiler: cc
+Is cross compiler: False.
+Sanity check compiler command line: cc /home/dylan/picom/build/meson-private/sanitycheckc.c -o /home/dylan/picom/build/meson-private/sanitycheckc.exe -pipe -D_FILE_OFFSET_BITS=64
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command: /home/dylan/picom/build/meson-private/sanitycheckc.exe
+C compiler for the build machine: cc (gcc 9.4.0 "cc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0")
+C linker for the build machine: cc ld.bfd 2.34
+No CFLAGS in the environment, not changing global flags.
+No LDFLAGS in the environment, not changing global flags.
+No CPPFLAGS in the environment, not changing global flags.
+Sanity testing C compiler: cc
+Is cross compiler: False.
+Sanity check compiler command line: cc /home/dylan/picom/build/meson-private/sanitycheckc.c -o /home/dylan/picom/build/meson-private/sanitycheckc.exe -pipe -D_FILE_OFFSET_BITS=64
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command: /home/dylan/picom/build/meson-private/sanitycheckc.exe
+C compiler for the host machine: cc (gcc 9.4.0 "cc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0")
+C linker for the host machine: cc ld.bfd 2.34
+Build machine cpu family: x86_64
+Build machine cpu: x86_64
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Target machine cpu family: x86_64
+Target machine cpu: x86_64
+Program git found: YES (/usr/bin/git)
+Running command: /usr/bin/git rev-parse --short=5 HEAD
+--- stdout ---
+cd505
+
+--- stderr ---
+
+
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmp0giac9dh
+Command line:  cc /home/dylan/picom/build/meson-private/tmp0giac9dh/testfile.c -pipe -E -P -D_FILE_OFFSET_BITS=64 -P -O0 -std=c11 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("stdc-predef.h")
+          #error "Header 'stdc-predef.h' could not be found"
+         #endif
+        #else
+         #include <stdc-predef.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "stdc-predef.h" : YES 
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmps8_vmhf9
+Command line:  cc /home/dylan/picom/build/meson-private/tmps8_vmhf9/testfile.c -o /home/dylan/picom/build/meson-private/tmps8_vmhf9/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Wall 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -Wall: YES 
+meson.build:63: WARNING: Consider using the built-in warning_level option instead of using "-Wall".
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmp940azuzq
+Command line:  cc /home/dylan/picom/build/meson-private/tmp940azuzq/testfile.c -o /home/dylan/picom/build/meson-private/tmp940azuzq/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Wcast-function-type 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -Wcast-function-type: YES 
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmpyikiac43
+Command line:  cc /home/dylan/picom/build/meson-private/tmpyikiac43/testfile.c -o /home/dylan/picom/build/meson-private/tmpyikiac43/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Wignored-qualifiers 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -Wignored-qualifiers: YES 
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmp6wjwm2oj
+Command line:  cc /home/dylan/picom/build/meson-private/tmp6wjwm2oj/testfile.c -o /home/dylan/picom/build/meson-private/tmp6wjwm2oj/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Wmissing-parameter-type 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -Wmissing-parameter-type: YES 
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmp_z3onyvr
+Command line:  cc /home/dylan/picom/build/meson-private/tmp_z3onyvr/testfile.c -o /home/dylan/picom/build/meson-private/tmp_z3onyvr/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Wnonnull 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -Wnonnull: YES 
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmps4f71h9q
+Command line:  cc /home/dylan/picom/build/meson-private/tmps4f71h9q/testfile.c -o /home/dylan/picom/build/meson-private/tmps4f71h9q/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Wshadow 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -Wshadow: YES 
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmpu0q4am4d
+Command line:  cc /home/dylan/picom/build/meson-private/tmpu0q4am4d/testfile.c -o /home/dylan/picom/build/meson-private/tmpu0q4am4d/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Wno-type-limits -Wtype-limits 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -Wno-type-limits -Wtype-limits: YES 
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmpg7ud2i4m
+Command line:  cc /home/dylan/picom/build/meson-private/tmpg7ud2i4m/testfile.c -o /home/dylan/picom/build/meson-private/tmpg7ud2i4m/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Wold-style-declaration 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -Wold-style-declaration: YES 
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmp0m8s1vr9
+Command line:  cc /home/dylan/picom/build/meson-private/tmp0m8s1vr9/testfile.c -o /home/dylan/picom/build/meson-private/tmp0m8s1vr9/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Woverride-init 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -Woverride-init: YES 
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmpt7l40fs7
+Command line:  cc /home/dylan/picom/build/meson-private/tmpt7l40fs7/testfile.c -o /home/dylan/picom/build/meson-private/tmpt7l40fs7/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Wsign-compare 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -Wsign-compare: YES 
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmp7cjm5djx
+Command line:  cc /home/dylan/picom/build/meson-private/tmp7cjm5djx/testfile.c -o /home/dylan/picom/build/meson-private/tmp7cjm5djx/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Wtype-limits 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -Wtype-limits: YES 
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmpnjzlbrpc
+Command line:  cc /home/dylan/picom/build/meson-private/tmpnjzlbrpc/testfile.c -o /home/dylan/picom/build/meson-private/tmpnjzlbrpc/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Wuninitialized 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -Wuninitialized: YES 
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmphcnahrmm
+Command line:  cc /home/dylan/picom/build/meson-private/tmphcnahrmm/testfile.c -o /home/dylan/picom/build/meson-private/tmphcnahrmm/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Wshift-negative-value 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -Wshift-negative-value: YES 
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmpghpktnuj
+Command line:  cc /home/dylan/picom/build/meson-private/tmpghpktnuj/testfile.c -o /home/dylan/picom/build/meson-private/tmpghpktnuj/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Wunused-but-set-parameter 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -Wunused-but-set-parameter: YES 
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmp5xfgaouc
+Command line:  cc /home/dylan/picom/build/meson-private/tmp5xfgaouc/testfile.c -o /home/dylan/picom/build/meson-private/tmp5xfgaouc/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Wunused-parameter 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -Wunused-parameter: YES 
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmpj48gnr1p
+Command line:  cc /home/dylan/picom/build/meson-private/tmpj48gnr1p/testfile.c -o /home/dylan/picom/build/meson-private/tmpj48gnr1p/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Wimplicit-fallthrough 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -Wimplicit-fallthrough: YES 
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmprdx_6d3o
+Command line:  cc /home/dylan/picom/build/meson-private/tmprdx_6d3o/testfile.c -o /home/dylan/picom/build/meson-private/tmprdx_6d3o/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Wno-unknown-warning-option -Wunknown-warning-option 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ cc: error: unrecognized command line option '-Wunknown-warning-option'
+
+Compiler for C supports arguments -Wno-unknown-warning-option -Wunknown-warning-option: NO 
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmpwtsqx8_b
+Command line:  cc /home/dylan/picom/build/meson-private/tmpwtsqx8_b/testfile.c -o /home/dylan/picom/build/meson-private/tmpwtsqx8_b/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Wno-missing-braces -Wmissing-braces 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -Wno-missing-braces -Wmissing-braces: YES 
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmp8vu4f457
+Command line:  cc /home/dylan/picom/build/meson-private/tmp8vu4f457/testfile.c -o /home/dylan/picom/build/meson-private/tmp8vu4f457/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Wconversion 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -Wconversion: YES 
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmpx8_kh_yi
+Command line:  cc /home/dylan/picom/build/meson-private/tmpx8_kh_yi/testfile.c -o /home/dylan/picom/build/meson-private/tmpx8_kh_yi/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -Wempty-body 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -Wempty-body: YES 
+
+Executing subproject test.h method meson 
+
+Project name: test.h
+Project version: undefined
+C compiler for the build machine: cc (gcc 9.4.0 "cc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0")
+C linker for the build machine: cc ld.bfd 2.34
+C compiler for the host machine: cc (gcc 9.4.0 "cc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0")
+C linker for the host machine: cc ld.bfd 2.34
+Build targets in project: 0
+Subproject test.h finished.
+
+Pkg-config binary for MachineChoice.HOST is not cached.
+Pkg-config binary missing from cross or native file, or env var undefined.
+Trying a default pkg-config fallback at pkg-config
+Trying pkg-config binary pkg-config for machine MachineChoice.HOST at ['/usr/bin/pkg-config']
+Found pkg-config: /usr/bin/pkg-config (0.29.1)
+Determining dependency 'libev' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion libev` -> 1
+
+CMake binary for MachineChoice.HOST is not cached
+CMake binary missing from cross or native file, or env var undefined.
+Trying a default CMake fallback at cmake
+Trying CMake binary cmake for machine MachineChoice.HOST at ['/usr/bin/cmake']
+Found CMake: /usr/bin/cmake (3.16.3)
+Extracting basic cmake information
+Try CMake generator: auto
+No CXXFLAGS in the environment, not changing global flags.
+No LDFLAGS in the environment, not changing global flags.
+No CPPFLAGS in the environment, not changing global flags.
+Failed to find a fortran compiler for CMake. This might cause CMake to fail.
+Called `/usr/bin/cmake --trace-expand .` in /home/dylan/picom/build/meson-private/cmake_libev -> 0
+  -- Module search paths:    ['/', '/opt', '/usr', '/usr/local']
+  -- CMake root:             /usr/share/cmake-3.16
+  -- CMake architectures:    ['i386-linux-gnu', 'x86_64-linux-gnu']
+  -- CMake lib search paths: ['lib', 'lib32', 'lib64', 'libx32', 'share', 'lib/i386-linux-gnu', 'lib/x86_64-linux-gnu']
+Preliminary CMake check failed. Aborting.
+Run-time dependency libev found: NO (tried pkgconfig and cmake)
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmpkmp6ocb1
+Command line:  cc /home/dylan/picom/build/meson-private/tmpkmp6ocb1/testfile.c -o /home/dylan/picom/build/meson-private/tmpkmp6ocb1/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -Wl,--start-group -lev -Wl,--end-group -Wl,--allow-shlib-undefined 
+
+Code:
+ int main(void) { return 0; }
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Library ev found: YES
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmpkkygoulj
+Command line:  cc /home/dylan/picom/build/meson-private/tmpkkygoulj/testfile.c -o /home/dylan/picom/build/meson-private/tmpkkygoulj/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -Wl,--start-group -lm -Wl,--end-group -Wl,--allow-shlib-undefined 
+
+Code:
+ int main(void) { return 0; }
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Library m found: YES
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'x11' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion x11` -> 0
+1.6.9
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags x11` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config x11 --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lX11
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config x11 --libs` -> 0
+-lX11
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmp17ckd506
+Command line:  cc /home/dylan/picom/build/meson-private/tmp17ckd506/testfile.c -o /home/dylan/picom/build/meson-private/tmp17ckd506/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 
+
+Code:
+ #include<stdio.h>
+        
+        int main(void) {
+            printf("%ld\n", (long)(sizeof(void *)));
+            return 0;
+        };
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Program stdout:
+
+8
+
+Program stderr:
+
+
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmpuwbj039t
+Command line:  cc /home/dylan/picom/build/meson-private/tmpuwbj039t/testfile.c -o /home/dylan/picom/build/meson-private/tmpuwbj039t/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
+
+Code:
+ 
+Compiler stdout:
+ install: /usr/lib/gcc/x86_64-linux-gnu/9/
+programs: =/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/bin/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/bin/
+libraries: =/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/9/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/9/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
+
+Compiler stderr:
+ 
+Run-time dependency x11 found: YES 1.6.9
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'x11-xcb' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion x11-xcb` -> 0
+1.6.9
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags x11-xcb` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config x11-xcb --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lX11-xcb -lX11 -lxcb
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config x11-xcb --libs` -> 0
+-lX11-xcb -lX11 -lxcb
+Run-time dependency x11-xcb found: YES 1.6.9
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'xcb-renderutil' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion xcb-renderutil` -> 0
+0.3.9
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags xcb-renderutil` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-renderutil --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lxcb-render-util -lxcb -lxcb-render
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-renderutil --libs` -> 0
+-lxcb-render-util -lxcb -lxcb-render
+Run-time dependency xcb-renderutil found: YES 0.3.9
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'xcb-image' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion xcb-image` -> 0
+0.4.0
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags xcb-image` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-image --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lxcb-image -lxcb -lxcb-shm
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-image --libs` -> 0
+-lxcb-image -lxcb -lxcb-shm
+Run-time dependency xcb-image found: YES 0.4.0
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'xext' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion xext` -> 0
+1.3.4
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags xext` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xext --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lXext
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xext --libs` -> 0
+-lXext
+Run-time dependency xext found: YES 1.3.4
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'pixman-1' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion pixman-1` -> 0
+0.38.4
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags pixman-1` -> 0
+-I/usr/include/pixman-1
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config pixman-1 --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lpixman-1
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config pixman-1 --libs` -> 0
+-lpixman-1
+Run-time dependency pixman-1 found: YES 0.38.4
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'xcb-render' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion xcb-render` -> 0
+1.14
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags xcb-render` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-render --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lxcb-render
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-render --libs` -> 0
+-lxcb-render
+Run-time dependency xcb-render found: YES 1.14
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'xcb-damage' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion xcb-damage` -> 0
+1.14
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags xcb-damage` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-damage --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lxcb-damage
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-damage --libs` -> 0
+-lxcb-damage
+Run-time dependency xcb-damage found: YES 1.14
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'xcb-randr' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion xcb-randr` -> 0
+1.14
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags xcb-randr` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-randr --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lxcb-randr
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-randr --libs` -> 0
+-lxcb-randr
+Run-time dependency xcb-randr found: YES 1.14
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'xcb-sync' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion xcb-sync` -> 0
+1.14
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags xcb-sync` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-sync --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lxcb-sync
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-sync --libs` -> 0
+-lxcb-sync
+Run-time dependency xcb-sync found: YES 1.14
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'xcb-composite' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion xcb-composite` -> 0
+1.14
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags xcb-composite` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-composite --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lxcb-composite
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-composite --libs` -> 0
+-lxcb-composite
+Run-time dependency xcb-composite found: YES 1.14
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'xcb-shape' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion xcb-shape` -> 0
+1.14
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags xcb-shape` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-shape --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lxcb-shape
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-shape --libs` -> 0
+-lxcb-shape
+Run-time dependency xcb-shape found: YES 1.14
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'xcb-xinerama' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion xcb-xinerama` -> 0
+1.14
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags xcb-xinerama` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-xinerama --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lxcb-xinerama
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-xinerama --libs` -> 0
+-lxcb-xinerama
+Run-time dependency xcb-xinerama found: YES 1.14
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'xcb-xfixes' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion xcb-xfixes` -> 0
+1.14
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags xcb-xfixes` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-xfixes --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lxcb-xfixes
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-xfixes --libs` -> 0
+-lxcb-xfixes
+Run-time dependency xcb-xfixes found: YES 1.14
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'xcb-present' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion xcb-present` -> 0
+1.14
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags xcb-present` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-present --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lxcb-present
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-present --libs` -> 0
+-lxcb-present
+Run-time dependency xcb-present found: YES 1.14
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'xcb-glx' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion xcb-glx` -> 0
+1.14
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags xcb-glx` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-glx --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lxcb-glx
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb-glx --libs` -> 0
+-lxcb-glx
+Run-time dependency xcb-glx found: YES 1.14
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'xcb' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion xcb` -> 0
+1.14
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags xcb` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lxcb
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config xcb --libs` -> 0
+-lxcb
+Run-time dependency xcb found: YES 1.14
+Running compile:
+Working directory:  /home/dylan/picom/build/meson-private/tmpya7w6kvp
+Command line:  cc /home/dylan/picom/build/meson-private/tmpya7w6kvp/testfile.c -pipe -E -P -D_FILE_OFFSET_BITS=64 -P -O0 -std=c11 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("uthash.h")
+          #error "Header 'uthash.h' could not be found"
+         #endif
+        #else
+         #include <uthash.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "uthash.h" : YES 
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'libconfig' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion libconfig` -> 0
+1.5
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags libconfig` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config libconfig --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lconfig
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config libconfig --libs` -> 0
+-lconfig
+Run-time dependency libconfig found: YES 1.5
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'libpcre' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion libpcre` -> 0
+8.39
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags libpcre` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config libpcre --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lpcre
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config libpcre --libs` -> 0
+-lpcre
+Run-time dependency libpcre found: YES 8.39
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'gl' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion gl` -> 0
+1.2
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags gl` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config gl --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -lGL
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config gl --libs` -> 0
+-lGL
+Run-time dependency gl found: YES 1.2
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'dbus-1' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion dbus-1` -> 0
+1.12.16
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags dbus-1` -> 0
+-I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config dbus-1 --libs` -> 0
+-L/usr/lib/x86_64-linux-gnu -ldbus-1
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config dbus-1 --libs` -> 0
+-ldbus-1
+Run-time dependency dbus-1 found: YES 1.12.16
+Program meson/install.sh found: YES (/home/dylan/picom/meson/install.sh)
+Build targets in project: 1
+
+picom 9
+
+  Subprojects
+    test.h: YES
+
+Found ninja-1.10.0 at /usr/bin/ninja
