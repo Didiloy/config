@@ -6,3 +6,4 @@ feh --bg-scale /home/dylan/Téléchargements/fond_ecran/mer_sainte_anne.jpg &
 killall compton
 compton
 brave-browser &
+killall plasmashell
