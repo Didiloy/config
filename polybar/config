@@ -68,7 +68,7 @@ font-4 = fixed:pixelsize=10;1
 
 modules-left =  circleStartBleu bspwm circleEndBleu
 modules-center =  separator spotify clementine
-modules-right = weather separator circleStart mem  cpu circleEnd separator  circleStart pulseaudio luminosite wlan circleEnd separator circleStart battery circleEnd separator circleStartBleu time circleEndBleu 
+modules-right = separator circleStart mem  cpu circleEnd separator  circleStart pulseaudio luminosite wlan circleEnd separator circleStart battery circleEnd separator circleStartBleu time circleEndBleu 
 
 tray-position = right
 tray-padding = 2
@@ -119,7 +119,7 @@ font-4 = fixed:pixelsize=10;1
 
 modules-left =  circleStartBleu bspwm circleEndBleu
 modules-center =  separator spotify clementine
-modules-right = weather separator circleStart mem  cpu circleEnd separator  circleStart pulseaudio luminosite wlan circleEnd separator circleStart battery circleEnd separator circleStartBleu time circleEndBleu 
+modules-right = circleStart mem  cpu circleEnd separator  circleStart pulseaudio luminosite wlan circleEnd separator circleStart battery circleEnd separator circleStartBleu time circleEndBleu 
 
 tray-position = right
 tray-padding = 2
@@ -388,14 +388,6 @@ label = %output%
 label-foreground = ${colors.teal}
 format = <label>
 interval = 1
-
-[module/weather]
-type = custom/script
-exec = forecast.sh/forecast.sh -l Frankrike/Pays_de_la_Loire/Loire-Atlantique | grep "Outlook" | sed 's/Outlook://'
-label-foreground = ${colors.green}
-format-prefix = " "
-format-prefix-foreground = ${colors.green}
-interval = 3600
 
 [module/luminosite]
 type = custom/script
