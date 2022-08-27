@@ -17,24 +17,27 @@
 ;==========================================================
 
 [colors]
-background = #11121D
-foreground = #281d4a
-green =  #254c25
-light-gray = #565c64
-roseBackground = #97799d
-bleuForeground = #537acc
-bleu = #8198e4
-saumon = #5D1F59
-marron = #553d58
-violet = #514378
-bleuClair = #1b5085
-noir = #1b0f15
-blanc = #eddee9
-jaune = #e4cd81
-roseClair = #BC9BBA
+background = #282a36
+foreground = #f8f8f3
+indigo  = #6272a4
+grey    = #43475a
+pink    = #ff78c6
+orange  = #ffb86c
+green   = #50fa7b
+cyan    = #8ae9fd
+purple  = #bd93f8
+red     = #ff5455
+yellow  = #f1fa8c
+blue    = #42A5F5
+teal    = #00B19F
+lime    = #B9C244
+amber   = #FBC02D
+brown   = #AC8476
+blue-gray = #6D8895
 
 [bar/example]
-monitor = eDP-1-1
+;monitor = eDP-1-1
+monitor = eDP-1
 width = 100%
 height = 21
 padding-left = 1
@@ -42,7 +45,7 @@ padding-right = 1
 radius = 6.0
 fixed-center = false
 
-background = ${colors.roseBackground}
+background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
@@ -64,7 +67,7 @@ font-3 = unifont:fontformat=truetype:size=13:antialias=true;
 font-4 = fixed:pixelsize=10;1
 
 modules-left =  circleStartBleu bspwm circleEndBleu
-modules-center = xwindow separator spotify clementine
+modules-center =  separator spotify clementine
 modules-right = weather separator circleStart mem  cpu circleEnd separator  circleStart pulseaudio luminosite wlan circleEnd separator circleStart battery circleEnd separator circleStartBleu time circleEndBleu 
 
 tray-position = right
@@ -83,7 +86,8 @@ cursor-scroll = ns-resize
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [bar/hdmi]
-monitor = HDMI-1-1
+;monitor = HDMI-1-1
+monitor = HDMI-1
 width = 100%
 height = 21
 padding-left = 1
@@ -91,7 +95,7 @@ padding-right = 1
 radius = 6.0
 fixed-center = false
 
-background = ${colors.roseBackground}
+background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
@@ -114,7 +118,7 @@ font-3 = unifont:fontformat=truetype:size=13:antialias=true;
 font-4 = fixed:pixelsize=10;1
 
 modules-left =  circleStartBleu bspwm circleEndBleu
-modules-center = xwindow separator spotify clementine
+modules-center =  separator spotify clementine
 modules-right = weather separator circleStart mem  cpu circleEnd separator  circleStart pulseaudio luminosite wlan circleEnd separator circleStart battery circleEnd separator circleStartBleu time circleEndBleu 
 
 tray-position = right
@@ -141,16 +145,16 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
+format-prefix-foreground = ${colors.foreground}
+format-prefix-underline = ${colors.indigo}
 
 label-layout = %layout%
-label-layout-underline = ${colors.secondary}
+label-layout-underline = ${colors.indigo}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
+label-indicator-background = ${colors.indigo}
+label-indicator-underline = ${colors.indigo}
 
 [module/filesystem]
 type = internal/fs
@@ -183,19 +187,19 @@ ws-icon-8 = 9;
 ws-icon-9 = 0;
 
 label-separator = ""
-label-separator-background = ${colors.bleu}
+label-separator-background = ${colors.foreground}
 
 ;;;;;;;;;;;;label focused;;;;;;;;
 label-focused = %icon% %name%
-label-focused-foreground = ${colors.foreground}
+label-focused-foreground = ${colors.amber}
 label-focused-padding = 1
-label-focused-background = ${colors.bleu}
+label-focused-background = ${colors.indigo}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;label occupe;;;;;;;;;;
 label-occupied = %icon% %name%
-label-occupied-foreground = ${colors.light-gray}
-label-occupied-background = ${colors.bleu}
+label-occupied-foreground = ${colors.foreground}
+label-occupied-background = ${colors.indigo}
 label-occupied-padding = 1
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -203,11 +207,11 @@ label-occupied-padding = 1
 label-empty = ""
 label-empty-foreground =   ${colors.foreground}
 label-empty-padding = 1
-label-empty-background = ${colors.roseBackground} 
+label-empty-background = ${colors.indigo} 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 label-urgent = %icon% %name%
-label-urgent-foreground = ${colors.bleu}
-label-urgent-background = ${colors.saumon}
+label-urgent-foreground = ${colors.lime}
+label-urgent-background = ${colors.yellow}
 label-urgent-padding = 1
 
 
@@ -217,19 +221,11 @@ interval = 2.5
 format = <label>
 format-prefix = "  "
 label = "%percentage:02%%"
-label-foreground = ${colors.saumon}
-format-prefix-foreground = ${colors.saumon}
+label-foreground = ${colors.pink}
+format-prefix-foreground = ${colors.pink}
 format-padding = 0
-label-background = ${colors.roseClair}
-format-prefix-background = ${colors.roseClair}
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
-label = %percentage_used%%
+label-background = ${colors.indigo}
+format-prefix-background = ${colors.indigo}
 
 [module/mem]
 type = custom/script
@@ -237,11 +233,11 @@ exec = printf "%.1f\n" $(echo $(free -m | sed -n 's/^Mem:\s\+[0-9]\+\s\+\([0-9]\
 format = <label>
 format-prefix = " "
 label = "%output%GB"
-label-foreground = ${colors.marron}
-format-prefix-foreground = ${colors.marron}
+label-foreground = ${colors.orange}
+format-prefix-foreground = ${colors.orange}
 format-padding = 0
-label-background = ${colors.roseClair}
-format-prefix-background = ${colors.roseClair}
+label-background = ${colors.indigo}
+format-prefix-background = ${colors.indigo}
 interval = 2
 
 [module/wlan]
@@ -250,9 +246,9 @@ interface = wlo1
 interval = 10.0
 format-connected = <label-connected>
 label-connected = " 直 "
-label-connected-foreground = ${colors.blanc}
+label-connected-foreground = ${colors.foreground}
 format-padding = 0
-label-connected-background = ${colors.roseClair}
+label-connected-background = ${colors.indigo}
 
 [module/eth]
 type = internal/network
@@ -261,7 +257,7 @@ interval = 3.0
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected-prefix-foreground = ${colors.foreground}
 label-connected = %local_ip%
 
 format-disconnected =
@@ -281,7 +277,7 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.amber}
 format-underline = #0a6cf5
 
 label = %date% %time%
@@ -289,22 +285,22 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 format-volume = <ramp-volume><label-volume>
-format-volume-background = ${colors.roseClair}
+format-volume-background = ${colors.indigo}
 format-muted = <label-muted>
 label-volume = " %percentage%%" 
 label-muted = " "
-label-volume-foreground = ${colors.violet}
-format-muted-foreground = ${colors.violet}
-label-volume-background = ${colors.roseClair}
+label-volume-foreground = ${colors.teal}
+format-muted-foreground = ${colors.red}
+label-volume-background = ${colors.indigo}
 format-muted-padding = 0
-format-muted-background = ${colors.roseClair}
+format-muted-background = ${colors.indigo}
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
-ramp-volume-foreground = ${colors.violet}
-ramp-volume-background = ${colors.roseClair}
+ramp-volume-foreground = ${colors.teal}
+ramp-volume-background = ${colors.indigo}
 ramp-headphones-0 = 
-ramp-headphones-foreground = ${colors.violet}
+ramp-headphones-foreground = ${colors.teal}
 format-padding = 0
 
 [module/battery]
@@ -314,33 +310,33 @@ adapter = ADP1
 full-at = 98
 ;;;;;;;;;;;;;;;;charging;;;;;;;;;;;;;;;
 format-charging = <ramp-capacity> <label-charging>
-format-charging-background = ${colors.roseClair}
+format-charging-background = ${colors.indigo}
 label-charging = " %percentage:2%%"
-format-charging-padding = 1
-format-charging-foreground = ${colors.bleuClair}
+format-charging-padding = 0
+format-charging-foreground = ${colors.purple}
 ;format-charging-background = ${colors.roseClair}
-label-charging-foreground = ${colors.bleuClair}
-label-charging-background = ${colors.roseClair}
+label-charging-foreground = ${colors.purple}
+label-charging-background = ${colors.indigo}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;discharging;;;;;;;;;;;;;;;
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-padding = 0
 label-discharging = " %percentage%%"
-format-discharging-foreground = ${colors.bleuClair}
-format-discharging-background = ${colors.roseClair}
-label-discharging-foreground = ${colors.bleuClair}
-label-discharging-background = ${colors.roseClair}
+format-discharging-foreground = ${colors.purple}
+format-discharging-background = ${colors.indigo}
+label-discharging-foreground = ${colors.purple}
+label-discharging-background = ${colors.indigo}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;full;;;;;;;;;;;;;;;
 format-full-prefix = "  "
-format-full-prefix-foreground = ${colors.bleuClair}
-format-full-prefix-background = ${colors.roseClair}
-format-full-foreground = ${colors.bleuClair}
-format-full-background = ${colors.roseClair}
+format-full-prefix-foreground = ${colors.purple}
+format-full-prefix-background = ${colors.indigo}
+format-full-foreground = ${colors.purple}
+format-full-background = ${colors.indigo}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-format-foreground = ${colors.bleuClair}
-format-background = ${colors.bleuClair}
-ramp-capacity-foreground =  ${colors.bleuClair}
+format-foreground = ${colors.purple}
+format-background = ${colors.purple}
+ramp-capacity-foreground =  ${colors.purple}
 ramp-capacity-0 = " "
 ramp-capacity-1 = " "
 ramp-capacity-2 = " "
@@ -351,15 +347,15 @@ animation-charging-1 = " "
 animation-charging-2 = " "
 animation-charging-3 = " "
 animation-charging-4 = " "
-animation-charging-foreground = ${colors.bleuClair}
+animation-charging-foreground = ${colors.purple}
 animation-charging-framerate = 910
 
 [module/time]
 type = internal/date
 interval = 60
 format = <label>
-format-foreground = ${colors.foreground}
-format-background = ${colors.bleu}
+format-foreground = ${colors.blue-gray}
+format-background = ${colors.indigo}
 date = %{F#281d4a} %H:%M%{F-}
 time-alt = %{F#281d4a} %d/%m/%y%{F-}
 label = %date%%time%
@@ -382,12 +378,14 @@ type = custom/script
 interval = 1
 format-prefix = " "
 format = <label>
+format-foreground = ${colors.teal}
 exec = python $HOME/.config/polybar/polybar-spotify/spotify_status.py -f '{play_pause} - {song} - {album} - {artist}'
 
 [module/clementine]
 type = custom/script
 exec = ~/.config/polybar/clementine/clementine.sh
 label = %output%
+label-foreground = ${colors.teal}
 format = <label>
 interval = 1
 
@@ -402,11 +400,11 @@ interval = 3600
 [module/luminosite]
 type = custom/script
 exec = $HOME/.config/polybar/luminosite/luminosite.sh
-label-foreground = ${colors.jaune}
-label-background = ${colors.roseClair}
+label-foreground = ${colors.lime}
+label-background = ${colors.indigo}
 format-prefix = "  "
-format-prefix-foreground = ${colors.jaune}
-format-prefix-background = ${colors.roseClair}
+format-prefix-foreground = ${colors.lime}
+format-prefix-background = ${colors.indigo}
 interval = 2
 
 [settings]
@@ -425,21 +423,21 @@ margin-bottom = 5
 [module/circleStart]
 type = custom/text
 content = 
-content-foreground = ${colors.roseClair}
+content-foreground = ${colors.indigo}
 content-font = 3
 content-padding = 0
 
 [module/circleEnd]
 type = custom/text
 content = 
-content-foreground = ${colors.roseClair}
+content-foreground = ${colors.indigo}
 content-font = 3
 content-padding = -1
 
 [module/circleStartBleu]
 type = custom/text
 content = 
-content-foreground = ${colors.bleu}
+content-foreground = ${colors.indigo}
 content-font = 3
 content-padding = 0
 
@@ -447,7 +445,7 @@ content-padding = 0
 [module/circleEndBleu]
 type = custom/text
 content = 
-content-foreground = ${colors.bleu}
+content-foreground = ${colors.indigo}
 content-font = 3
 content-padding = -1
 
