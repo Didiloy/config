@@ -2,42 +2,102 @@
     background-color: #313543 !important;
 }
 
-.background-lighter-blue {
-    background-color: #414552 !important;
+.main {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    height: 60%;
+    width: 45%;
+    display: flex;
 }
 
-.border-radius-15 {
-    border-radius: 15px;
+.icons-column {
+    width: 65px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.margin-20 {
-    margin-left: 40px;
-    margin-right: 40px;
+.icon {
+    background-color: rgba(255, 120, 198, 0.6);
+    border-radius: 50%;
+    padding: 0.2em;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.margin-icon-temp {
-    margin-top: 10px;
+.icon:hover .material-icons {
+    color: white;
 }
 
-.margin-card-title {
-    margin-bottom: 40px;
+.content-column {
+    /* background-color: green; */
+    margin-left: 20px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
 }
 
-.div-hover {}
-
-.div-hover:hover {
-    background-color: #545863 !important;
+.day {
+    /* background-color: blue; */
+    height: 25%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-.no-link-style {
-    text-decoration: none;
+#day {
+    font-family: impact;
+    font-size: 80px;
+    color: antiquewhite;
+    text-shadow: 2px 0 0 black;
 }
 
-.titre_news {
-    text-shadow:
-       1px 0px 0px black,   /* Right shadow */
-       -1px 0px 0px black,  /* Left shadow */
-       0px 1px 0px black,   /* Bottom shadow */
-       0px -1px 0px black;  /* Top shadow */
-    color: white
-   }
+.search {
+    /* background-color: black; */
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#search-input {
+    height: 100%;
+    width: 100%;
+    background-color: #999999;
+    border: none;
+    /* <-- This thing here */
+    border: solid 1px #ccc;
+    border-radius: 25px;
+    font-size: 25px;
+}
+
+.date-p {
+    font-family: "MS Gothic";
+    color: #933e7a;
+    font-size: 30px;
+    text-shadow: 1px 0 0 black;
+}
+
+.weather-t {
+    font-family: "MS Gothic";
+    color: #01a4a5;
+    font-size: 25px;
+    text-shadow: 1px 0 0 black;
+}
+
+.citation-t {
+    color: antiquewhite;
+    font-size: 30px;
+    text-shadow: 1px 0 0 black;
+}

@@ -1,12 +1,36 @@
 // needed to have the weather
 const keyWeather = "9ae317666b214f4db7f142935220502";
 const unsplashKey = "zYkwd7-nZyTOB4SXH9cuC6bSiEUneNL8yhLMPiDzGD8";
-const UNSPLASH_BASE_URL = "https://api.unsplash.com/search/photos";
-const newsKey = "bad455a3e69d4b6180a4ad2a31a7406b";
+const UNSPLASH_BASE_URL = "https://api.unsplash.com/photos/random";
+const days = [
+    "Dimanche",
+    "Lundi",
+    "Mardi",
+    "Mercredi",
+    "Jeudi",
+    "Vendredi",
+    "Samedi",
+];
+const months = [
+    "Janvier",
+    "Février",
+    "Mars",
+    "Avril",
+    "Mai",
+    "Juin",
+    "Juillet",
+    "Aout",
+    "Septembre",
+    "Octobre",
+    "Novembre",
+    "Décembre",
+];
 
 async function initView() {
     // set the listener on the search bar
     search_bar = document.querySelector("#search-input");
+    search_bar.focus();
+    search_bar.select();
     search_bar.addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
             let query = search_bar.value;
@@ -16,6 +40,11 @@ async function initView() {
             } else {
                 //handle quick search
                 switch (query[0]) {
+                    case "m":
+                        document.location.href = `https://music.youtube.com/search?q=${query.slice(
+              2
+            )}`;
+                        break;
                     case "y":
                         if (["'"].includes(query[1])) {
                             document.location.href = `https://www.youtube.com/results?search_query=${query.slice(
@@ -54,11 +83,6 @@ async function initView() {
 
     getDate();
     await getWeather();
-    try {
-        await getNews();
-    } catch (error) {
-        console.log(error);
-    }
     setInterval(getDate, 60000); //chaque minutes
     setInterval(getWeather, 3600000); //chaque 1h
 }
@@ -67,15 +91,24 @@ function getDate() {
     // Set the date and hour
     let currentDate = new Date();
 
+    let day = days[currentDate.getDay()];
     let cDay = currentDate.getDate();
     let cMonth = currentDate.getMonth() + 1;
     let cYear = currentDate.getFullYear();
-    let formatedDate = "<b>" + cDay + "/" + cMonth + "/" + cYear + "</b>";
+    let formatedDate =
+        "<b>" + cDay + " " + months[cMonth - 1] + " " + cYear + "</b>";
 
+    let day_text = document.querySelector("#day");
+    day_text.innerHTML = day;
     let date_text = document.querySelector("#date-text");
     date_text.innerHTML = formatedDate;
 
-    let time = currentDate.getHours() + ":" + currentDate.getMinutes();
+    let time =
+        currentDate.getHours() +
+        ":" +
+        (currentDate.getMinutes() < 10 ?
+            "0" + currentDate.getMinutes() :
+            currentDate.getMinutes());
     let hour_text = document.querySelector("#hour-text");
     hour_text.innerHTML = time;
 }
@@ -84,10 +117,9 @@ async function getWeather() {
     // get the DOM elements to display the weather
     let temperature = document.querySelector("#temperature-text");
     let description = document.querySelector("#weather-description-text");
-    let image_weather = document.querySelector("#icon-weather");
 
     //Get the weather
-    let linkWeather = `http://api.weatherapi.com/v1/current.json?key=${keyWeather}&q=Nantes&aqi=no&lang=fr`;
+    let linkWeather = `http://api.weatherapi.com/v1/current.json?key=${keyWeather}&q=Poitiers&aqi=no&lang=fr`;
     await fetch(linkWeather)
         .then((response) => {
             return response.json();
@@ -98,59 +130,19 @@ async function getWeather() {
             description.innerHTML = data.current.condition.text;
             let link_icon = data.current.condition.icon;
             link_icon = "http:" + link_icon;
-            image_weather.setAttribute("src", link_icon);
-            await getWallpaper(data.current.condition.text);
+            await getWallpaper();
         });
 }
 
-async function getNews() {
-    //get the dom element to display the news
-    let image_news = document.querySelector("#image_news");
-    let titre_news = document.querySelector("#titre_news");
-    let detail_news = document.querySelector("#detail_news");
-    let lien_news = document.querySelector("#lien_news");
-    //get the news
-    let linkNews = `https://newsapi.org/v2/top-headlines?country=fr&apiKey=${newsKey}`;
-    await fetch(linkNews)
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            console.log(data);
-            numberOfTheArticle = Math.floor(Math.random() * data.articles.length);
-            image_news.setAttribute(
-                "src",
-                data.articles[numberOfTheArticle].urlToImage
-            );
-            image_news.setAttribute("width", 300);
-            image_news.setAttribute("height", 200);
-            titre_news.innerHTML =
-                data.articles[numberOfTheArticle].title.length > 60 ?
-                data.articles[numberOfTheArticle].title.slice(0, 60) + "..." :
-                data.articles[numberOfTheArticle].title;
-            detail_news.innerHTML = data.articles[numberOfTheArticle].description;
-            lien_news.setAttribute("href", data.articles[numberOfTheArticle].url);
-        });
-}
-
-async function getWallpaper(keyword) {
+async function getWallpaper() {
     let body = document.querySelector(".body");
-    if (keyword.toLowerCase() === "clair") {
-        keyword = "good weather";
-    } else if (keyword.toLowerCase() === "ensoleillé") {
-        keyword = "summer landscape";
-    } else if (keyword.toLowerCase() === "couvert") {
-        keyword = "cloudy weather";
-    }
     fetch(
-        UNSPLASH_BASE_URL +
-        `?client_id=${unsplashKey}&query=${keyword}&per_page=8&orientation=landscape`
+        UNSPLASH_BASE_URL + `?client_id=${unsplashKey}&orientation=landscape`
     ).then(async(response) => {
         response.json().then((data) => {
-            // console.log(data.results);
-            let linkNumber = Math.floor(Math.random() * data.results.length);
+            // console.log(data);
             try {
-                let linkPicture = data.results[linkNumber].urls.regular;
+                let linkPicture = data.urls.full;
                 body.backgroundColor = "none";
                 body.style.backgroundImage = "url(" + linkPicture + ")";
                 body.style.backgroundSize = "cover";
