@@ -1,0 +1,9 @@
+(include "./src/yuck/lumin/_modules.yuck")
+(include "./src/yuck/lumin/_layout.yuck")
+
+(defwindow lumin :stacking "bg"
+  :windowtype "normal" :wm-ignore true
+  :geometry (geometry :x 150 :y 100 :width "50%" :height "25%" :anchor "left top")
+  (lumin_layout))
+
+;; vim:ft=yuck
