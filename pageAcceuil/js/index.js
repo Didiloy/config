@@ -168,7 +168,7 @@ async function getWallpaper() {
     let body = document.querySelector(".body");
     let query =
         localStorage.getItem(local_storage_prefix) != undefined
-          ? localStorage.getItem(local_storage_prefix)
+          ? "query=" + localStorage.getItem(local_storage_prefix)
           : "";
     fetch(
         UNSPLASH_BASE_URL + `?client_id=${unsplashKey}&orientation=landscape&${query}`
