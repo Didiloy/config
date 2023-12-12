@@ -2,6 +2,7 @@
 const keyWeather = "9ae317666b214f4db7f142935220502";
 const unsplashKey = "zYkwd7-nZyTOB4SXH9cuC6bSiEUneNL8yhLMPiDzGD8";
 const UNSPLASH_BASE_URL = "https://api.unsplash.com/photos/random";
+const local_storage_prefix = "wallpaper_category";
 const days = [
     "Dimanche",
     "Lundi",
@@ -24,6 +25,21 @@ const months = [
     "Octobre",
     "Novembre",
     "Décembre",
+];
+
+const wallpaper_categories = [
+  "sea",
+  "mountain",
+  "forest",
+  "city",
+  "space",
+  "light",
+  "paint",
+  "summer",
+  "lighting",
+  "half",
+  "astro",
+  "pastel",
 ];
 
 async function initView() {
@@ -81,6 +97,20 @@ async function initView() {
         }
     });
 
+    //create the list for the wallpaper categories
+  select_datalist = document.querySelector("#categories-list");
+  options = "";
+  wallpaper_categories.forEach((element) => {
+    options += `<option value="${element}">${element}</option>`;
+  });
+  select_datalist.innerHTML = options;
+
+  select_datalist.addEventListener("change", function (event) {
+    let query = select_datalist.options[select_datalist.selectedIndex].value;
+    localStorage.setItem(local_storage_prefix, query);
+  });
+  select_datalist.value = localStorage.getItem(local_storage_prefix);
+
     getDate();
     await getWeather();
     setInterval(getDate, 60000); //chaque minutes
@@ -136,8 +166,12 @@ async function getWeather() {
 
 async function getWallpaper() {
     let body = document.querySelector(".body");
+    let query =
+        localStorage.getItem(local_storage_prefix) != undefined
+          ? localStorage.getItem(local_storage_prefix)
+          : "";
     fetch(
-        UNSPLASH_BASE_URL + `?client_id=${unsplashKey}&orientation=landscape`
+        UNSPLASH_BASE_URL + `?client_id=${unsplashKey}&orientation=landscape&${query}`
     ).then(async(response) => {
         response.json().then((data) => {
             // console.log(data);
